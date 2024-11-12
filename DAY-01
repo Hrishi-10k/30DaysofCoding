@@ -1,0 +1,20 @@
+P01:-
+169. Majority Element
+Given an array nums of size n, return the majority element.
+The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+
+CODE:-
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int count = 0;
+        int a=0;
+        for (int num : nums) {
+            if (count == 0) {
+                a = num;
+            }
+            count += (a == num) ? 1 : -1;
+        }
+        return a;
+    }
+};
